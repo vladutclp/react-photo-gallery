@@ -1,0 +1,19 @@
+@import '../../../sassStyles/_variable.scss';
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    &__link {
+        text-decoration: none;
+        padding: .8rem .6rem;
+        margin: 0 1rem;
+        display: inline-block;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        color: $color-white;
+        transition: .5s background-color ease;
+        &:hover {
+            background-color: $natural-yellow;
+        }
+    }
+}
