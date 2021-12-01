@@ -1,6 +1,7 @@
 @import '../../../sassStyles/_variable.scss';
 
 .navbar {
+    padding: 2rem;
     display: flex;
     justify-content: center;
     &__link {
@@ -12,6 +13,7 @@
         letter-spacing: 2px;
         color: $color-white;
         transition: .5s background-color ease;
+        text-transform: uppercase;
         &:hover {
             background-color: $natural-yellow;
         }
