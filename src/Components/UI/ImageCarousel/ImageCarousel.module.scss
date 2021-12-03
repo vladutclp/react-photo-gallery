@@ -1,0 +1,52 @@
+.imageCarousel {
+    // border: 5px solid red;
+    padding: 5rem;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__image {
+        height: 100%;
+        width: 70%;
+        animation: fadeAnimation;
+        animation-duration: 1.5s;
+    }
+
+    &__button {
+        position: absolute;
+        outline: none;
+        border: 3px solid white;
+        width: 5rem;
+        height: 3rem;
+        background-color: transparent;
+        transition: .4s background-color ease;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    &__buttonLeft {
+        left: 20%;
+    }
+
+    &__buttonRight {
+        right: 20%;
+    }
+
+}
+
+@keyframes fadeAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

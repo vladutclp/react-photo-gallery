@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import ImageCarousel from '../UI/ImageCarousel/ImageCarousel';
 
 const Home = () => {
   return (
     <div>
       <main>
-        <h1>Welcome to home page</h1>
+        <ImageCarousel />
       </main>
       
     </div>

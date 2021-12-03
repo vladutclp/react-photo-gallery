@@ -21,7 +21,9 @@ const App = () => {
         </Routes>
       </header>
 
-      <footer></footer>
+      <footer>
+        here goes the footer
+      </footer>
     </div>
   );
 };
