@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
+import { BORDER_COLOR, FONT_COLOR } from '../../../constants';
 import classes from './NavBar.module.scss';
-
-const BORDER_COLOR = '#F1B24A';
 
 const NavBar = () => {
   const activeStyle = {
     borderBottom: ` 3px solid ${BORDER_COLOR}`,
+    color: FONT_COLOR
   };
   return (
     <nav className={classes.navbar}>

@@ -1,12 +1,9 @@
 import ImageCarousel from '../UI/ImageCarousel/ImageCarousel';
-
+import classes from './Home.module.scss'
 const Home = () => {
   return (
-    <div>
-      <main>
-        <ImageCarousel />
-      </main>
-      
+    <div className={classes.wrapper}>
+      <ImageCarousel />
     </div>
   );
 };

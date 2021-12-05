@@ -1,0 +1,30 @@
+@import '../../../sassStyles/_variable.scss';
+.footer {
+    background-color: $dark-green;
+    color: rgb(197, 197, 197);
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    &__socialMedia {
+        >* {
+            transition: .4s color ease;
+            padding: .4rem;
+            font-size: 1.4rem;
+            &:hover {
+                cursor: pointer;
+                color: $color-white;
+            }
+        }
+    }
+    &__copyright {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >* {
+            padding: .4rem;
+        }
+    }
+}

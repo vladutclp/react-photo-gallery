@@ -6,11 +6,12 @@ import Shop from './Components/Shop/Shop';
 import AboutMe from './Components/AboutMe/AboutMe';
 import Contact from './Components/Contact/Contact';
 import classes from './App.module.scss';
+import Footer from './Components/UI/Footer/Footer';
 
 const App = () => {
   return (
-    <div className={classes.TestClass}>
-      <header>
+    <>
+      <div className={classes.wrapper}>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -19,12 +20,10 @@ const App = () => {
           <Route path='/aboutme' element={<AboutMe />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
-      </header>
-
-      <footer>
-        here goes the footer
-      </footer>
-    </div>
+        <div className={classes.footerPush}></div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
