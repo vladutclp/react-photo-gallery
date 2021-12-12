@@ -1,18 +1,42 @@
 import { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
+import ImageCarousel from '../UI/ImageCarousel/ImageCarousel';
+import Modal from '../UI/Modal/Modal';
 import clalsses from './Gallery.module.scss';
 
-
 const Gallery = () => {
-  const getPhotoElements =  (photoData, photoSize) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+
+  const handleImageClick = (photoData) => {
+    console.log('clicked ', photoData);
+    setIsOpen(true);
+    setCurrentImage(photoData);
+  };
+  const getPhotoElements = (photoData, photoSize) => {
     console.log('from getPhotoElements');
     console.log(photoData);
     if (photoData) {
       return photoData.map((photo) => {
-        return <img key={photo.id} src={photo.smallSize} alt='' />;
+        return (
+          <img
+            onClick={() => handleImageClick(photo)}
+            key={photo.id}
+            src={photo.smallSize}
+            alt=''
+          />
+        );
       });
     }
     return null;
+  };
+
+  const getRegularSizeImages = (imageData) => {
+    if (!imageData) return null;
+    const regularSizeImages = imageData.map(image => image.regularSize);
+    console.log(regularSizeImages);
+
+    return regularSizeImages;
   };
 
   const [photoData, setPhotoData] = useState();
@@ -25,7 +49,7 @@ const Gallery = () => {
         },
       });
       const photoData = await response.json();
-      console.log(photoData)
+      console.log(photoData);
       const transformedData = photoData.map((photo) => {
         return {
           id: photo.id,
@@ -34,21 +58,38 @@ const Gallery = () => {
           thumbSize: photo.urls.thumb,
         };
       });
-      console.log('transformedData')
-      console.log(transformedData)
+      console.log('transformedData');
+      console.log(transformedData);
       if (transformedData) {
         setPhotoData(transformedData);
       }
     };
 
     fetchPhotos();
-  
   }, []);
 
+  const test_Style = {
+    backgroundColor: 'red',
+    zIndex: 25,
+    width: '10rem',
+    height: '10rem',
+  };
+
+  const images = getRegularSizeImages(photoData);
+
   return (
-    <div className={clalsses.gallery}>
-      <section>{getPhotoElements(photoData)}</section>
-    </div>
+    <>
+      <div
+        className={clalsses.gallery}
+        style={{ zIndex: 10, position: 'relative' }}
+      >
+        <section>{getPhotoElements(photoData)}</section>
+        <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <ImageCarousel images={images} />
+        </Modal>
+      </div>
+      <div style={test_Style}></div>
+    </>
   );
 };
 
