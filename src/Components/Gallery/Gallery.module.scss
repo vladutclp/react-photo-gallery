@@ -4,9 +4,10 @@
     min-height: 100vh;
     section {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
+        grid-template-columns: repeat(auto-fit, 25rem);
         align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
     }
     img {
         object-fit: contain;

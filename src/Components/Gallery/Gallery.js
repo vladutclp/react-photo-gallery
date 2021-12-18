@@ -68,13 +68,6 @@ const Gallery = () => {
     fetchPhotos();
   }, []);
 
-  const test_Style = {
-    backgroundColor: 'red',
-    zIndex: 25,
-    width: '10rem',
-    height: '10rem',
-  };
-
   const images = getRegularSizeImages(photoData);
 
   return (
@@ -88,7 +81,6 @@ const Gallery = () => {
           <ImageCarousel images={images} />
         </Modal>
       </div>
-      <div style={test_Style}></div>
     </>
   );
 };
