@@ -23,7 +23,7 @@ const Gallery = () => {
             onClick={() => handleImageClick(photo)}
             key={photo.id}
             src={photo.smallSize}
-            alt=''
+            alt=""
           />
         );
       });
@@ -33,7 +33,7 @@ const Gallery = () => {
 
   const getRegularSizeImages = (imageData) => {
     if (!imageData) return null;
-    const regularSizeImages = imageData.map(image => image.regularSize);
+    const regularSizeImages = imageData.map((image) => image.regularSize);
     console.log(regularSizeImages);
 
     return regularSizeImages;
@@ -71,17 +71,15 @@ const Gallery = () => {
   const images = getRegularSizeImages(photoData);
 
   return (
-    <>
-      <div
-        className={clalsses.gallery}
-        style={{ zIndex: 10, position: 'relative' }}
-      >
-        <section>{getPhotoElements(photoData)}</section>
-        <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-          <ImageCarousel images={images} />
-        </Modal>
-      </div>
-    </>
+    <div
+      className={clalsses.gallery}
+      style={{ zIndex: 10, position: 'relative' }}
+    >
+      <section>{getPhotoElements(photoData)}</section>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ImageCarousel images={images} />
+      </Modal>
+    </div>
   );
 };
 

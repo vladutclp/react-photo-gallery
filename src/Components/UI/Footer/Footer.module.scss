@@ -1,7 +1,8 @@
 @import '../../../sassStyles/_variable.scss';
 .footer {
-    background-color: $dark-green;
-    color: rgb(197, 197, 197);
+    // background-color: $dark-green;
+    border-top: .1rem solid gray;
+    color: gray;
     width: 100%;
     height: 5rem;
     display: flex;
