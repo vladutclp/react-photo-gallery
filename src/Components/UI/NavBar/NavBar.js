@@ -6,17 +6,17 @@ const NavBar = () => {
   const activeStyle = {
     // borderBottom: ` 3px solid ${BORDER_COLOR}`,
     color: 'white',
-	backgroundColor: 'gray'
+    backgroundColor: 'gray',
   };
   return (
     <nav className={classes.navbar}>
       <div className={classes.navbar__logo}>
-        <img className={classes.navbar__logoImage} src={mountainLogo} alt="" /> 
-		<div className={classes.navbar__logoLabel}>Clapou Vladut</div>
+        <img className={classes.navbar__logoImage} src={mountainLogo} alt='' />
+        <div className={classes.navbar__logoLabel}>Clapou Vladut</div>
       </div>
       <NavLink
         className={classes.navbar__link}
-        to="/"
+        to='/'
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         Home
@@ -24,30 +24,37 @@ const NavBar = () => {
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         className={classes.navbar__link}
-        to="/gallery"
+        to='/gallery'
       >
         Gallery
       </NavLink>
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         className={classes.navbar__link}
-        to="/shop"
+        to='/shop'
       >
         Shop
       </NavLink>
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         className={classes.navbar__link}
-        to="/aboutme"
+        to='/aboutme'
       >
         About me
       </NavLink>
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         className={classes.navbar__link}
-        to="/contact"
+        to='/contact'
       >
         Contact
+      </NavLink>
+      <NavLink
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        className={classes.navbar__link}
+        to='/cart'
+      >
+        Cart
       </NavLink>
     </nav>
   );
