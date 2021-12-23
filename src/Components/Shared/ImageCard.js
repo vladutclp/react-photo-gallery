@@ -3,9 +3,10 @@ import classes from './ImageCard.module.scss';
 
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Button from '../UI/Button/Button';
+import { connect } from 'react-redux';
+import { addToCart } from '../../store/Shopping/shopping-actions';
 
-const ImageCard = ({ buttonAction, image }) => {
-
+const ImageCard = ({ addToCart, image }) => {
   const [isHovered, setIsHovered] = useState(false);
   console.log('component rerenders');
 
@@ -18,7 +19,7 @@ const ImageCard = ({ buttonAction, image }) => {
       <img
         className={isHovered ? classes.ImageCard__ImageHover : null}
         src={image.url}
-        alt=""
+        alt=''
       />
 
       <div className={classes.ImageCard__Metadata}>
@@ -31,7 +32,7 @@ const ImageCard = ({ buttonAction, image }) => {
       </div>
       {isHovered ? (
         <Button
-          clickHandler={buttonAction}
+          clickHandler={() => addToCart(image.id)}
           label={'Add to cart'}
           icon={faShoppingCart}
         ></Button>
@@ -40,4 +41,10 @@ const ImageCard = ({ buttonAction, image }) => {
   );
 };
 
-export default ImageCard;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ImageCard);
