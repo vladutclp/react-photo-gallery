@@ -10,10 +10,16 @@ const NavBar = () => {
   };
   return (
     <nav className={classes.navbar}>
-      <div className={classes.navbar__logo}>
-        <img className={classes.navbar__logoImage} src={mountainLogo} alt='' />
-        <div className={classes.navbar__logoLabel}>Clapou Vladut</div>
-      </div>
+      <NavLink  to='/' >
+        <div className={classes.navbar__logo}>
+          <img
+            className={classes.navbar__logoImage}
+            src={mountainLogo}
+            alt=''
+          />
+          <div className={classes.navbar__logoLabel}>Clapou Vladut</div>
+        </div>
+      </NavLink>
       <NavLink
         className={classes.navbar__link}
         to='/'
