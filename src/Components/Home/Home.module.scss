@@ -20,20 +20,21 @@
 }
 
 .hero {
-    background-color: rgba(31, 31, 31, 0.637);
+    // background-color: rgba(255, 255, 255, 0.144);
     border-radius: 10px;
     padding: 10rem 7rem;
     width: 50rem;
     color: white;
     display: flex;
     align-items: center;
-    
+    text-align: center;
     &__metadata {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
     }
-    &__heading, &__description {
+    &__heading,
+    &__description {
         letter-spacing: 1px;
         margin-bottom: 1rem;
     }
@@ -41,15 +42,25 @@
         font-size: 3rem;
         padding: 1rem 0;
     }
+    &__description {
+        font-size: 1.1rem;
+        font-style: italic;
+    }
     &__cta {
-        height: 2.5rem;
-        width: 5rem;
+        align-self: center;
+        line-height: 3rem;
+        height: 3rem;
+        width: 10rem;
         outline: none;
         border: none;
         letter-spacing: 2px;
         background-color: rgb(255, 94, 0);
         color: white;
         border-radius: 5px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-top: 2rem;
+        text-decoration: none;
         &:hover {
             cursor: pointer;
             background-color: rgb(255, 148, 47);
