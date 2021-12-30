@@ -4,9 +4,7 @@ import classes from './NavBar.module.scss';
 import mountainLogo from '../../../assets/mountains.png';
 const NavBar = () => {
   const activeStyle = {
-    // borderBottom: ` 3px solid ${BORDER_COLOR}`,
-    color: 'white',
-    backgroundColor: 'gray',
+    borderBottom: ` 3px solid ${BORDER_COLOR}`,
   };
   return (
     <nav className={classes.navbar}>
