@@ -6,6 +6,18 @@ import backgroundImage4 from '../../assets/bgImage4.jpg';
 import { Parallax } from 'react-parallax';
 import { NavLink } from 'react-router-dom';
 
+const HeroCard = ({ heading, description, buttonCaption, route }) => (
+  <div className={classes.hero}>
+    <div className={classes.hero__metadata}>
+      <h1 className={classes.hero__heading}>{heading}</h1>
+      <p className={classes.hero__description}>{description}</p>
+      <NavLink className={classes.hero__cta} to={route}>
+        {buttonCaption}
+      </NavLink>
+    </div>
+  </div>
+);
+
 const Home = () => {
   return (
     <div className={classes.wrapper}>
@@ -13,20 +25,14 @@ const Home = () => {
         <div
           className={`${classes.parallaxContainer__hero} ${classes.parallaxContainer}`}
         >
-          <div className={classes.hero}>
-            <div className={classes.hero__metadata}>
-              <h1 className={classes.hero__heading}>
-                Capturing the beauty of Romania
-              </h1>
-              <p className={classes.hero__description}>
-                Come with me in this amazing adventure and take a look at the
-                amazing beauties of Romania
-              </p>
-              <NavLink className={classes.hero__cta} to='/gallery'>
-                Gallery
-              </NavLink>
-            </div>
-          </div>
+          <HeroCard
+            heading={'Capturing the beauty of Romania'}
+            description={
+              ' Come with me in this amazing adventure and take a look at theamazing beauties of Romania'
+            }
+            buttonCaption={'Gallery'}
+            route={'/gallery'}
+          />
         </div>
       </Parallax>
 
@@ -40,18 +46,15 @@ const Home = () => {
         <div
           className={`${classes.parallaxContainer__hero} ${classes.parallaxContainer}`}
         >
-          <div className={classes.hero}>
-            <div className={classes.hero__metadata}>
-              <h1 className={classes.hero__heading}>Fine art prints</h1>
-              <p className={classes.hero__description}>
-                Being closer to nature is easier than you think. Explore my shop
-                for some fine art prints!
-              </p>
-              <NavLink className={classes.hero__cta} to='/shop'>
-                Shop
-              </NavLink>
-            </div>
-          </div>
+          <HeroCard
+            key='prints'
+            heading={'Fine art prints'}
+            description={
+              ' Being closer to nature is easier than you think. Explore my shop for some fine art prints!'
+            }
+            buttonCaption={'Shop'}
+            route={'/shop'}
+          />
         </div>
       </Parallax>
       <div className={classes.quote}>
@@ -68,7 +71,7 @@ const Home = () => {
             <input
               placeholder='Enter your email adress'
               className={classes.contact__input}
-              type='text'
+              type='email'
             />
             <button className={classes.contact__submit}>Subscribe</button>
           </div>
