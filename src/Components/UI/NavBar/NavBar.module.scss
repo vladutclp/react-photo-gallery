@@ -1,12 +1,10 @@
 @import '../../../sassStyles/_variable.scss';
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 .navbar {
-    border-bottom: 1px solid gray;
     padding: 1rem 5rem;
     display: flex;
     justify-content: flex-end;
-    // background-color: $dark-green;
-    // font-size: 1.3rem;
+    background-color: black;
     letter-spacing: 2px;
     position: relative;
     &__link {
@@ -14,29 +12,34 @@
         padding: .8rem .6rem;
         margin: 0 1rem;
         display: inline-block;
-        color: $font-color-primary;
-        transition: .5s background-color ease;
+        color: white;
+        transition: .3s background-color ease;
         &:hover {
-            background-color: gray;
-            color: $color-white;
+            background-color: white;
+            color: black;
         }
     }
 
     &__logoImage {
         height: 3rem;
         width: 3rem;
+        color: white;
+        background-color: white;
+        display: block;
     }
 
     &__logoLabel{ 
-
+        color: white;
+        margin-left: 1rem;
     }
 
     &__logo {
+        margin-top: -1rem;
+        height: 100%;
         display: flex;
         padding: 0 1.5rem;
         align-items: center;
         justify-content: space-between;
-        border: 2px solid white;
         position: absolute;
         left: 0;
     }
