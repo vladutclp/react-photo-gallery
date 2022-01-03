@@ -1,0 +1,73 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.55);
+    margin-bottom: 2rem;
+    &__infoWrapper {
+        height: 10rem;
+        padding: 5rem 15rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__infoHeading {
+        width: 30%;
+        font-size: 3rem;
+    }
+    &__infoDescription {
+        width: 40%;
+        font-size: 1.2rem;
+        line-height: 130%;
+        padding: 0 2rem;
+    }
+    &__nameFields {
+        display: flex;
+        justify-content: stretch;
+        div {
+            width: 100%;
+        }
+    }
+    &__inputWrapper {
+        padding: .5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        input,
+        textarea {
+            margin-top: .5rem;
+            background-color: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            outline: none;
+            color: rgba(0, 0, 0, 0.73);
+            padding: .5rem .8rem;
+            &:focus {
+                background-color: white;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+            }
+        }
+        input {
+            height: 2rem;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+    &__submit {
+        height: 2.5rem;
+        width: 10rem;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        align-self: flex-end;
+        margin-right: 1rem;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.73);
+        transition: .3s all ease;
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: black;
+        }
+    }
+}
