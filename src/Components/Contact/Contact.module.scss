@@ -1,7 +1,7 @@
 .contact {
     display: flex;
     flex-direction: column;
-    color: rgba(0, 0, 0, 0.55);
+    color: rgba(26,26,26,.7);
     margin-bottom: 2rem;
     &__infoWrapper {
         height: 10rem;
@@ -56,13 +56,15 @@
         height: 2.5rem;
         width: 10rem;
         background-color: white;
-        border: 1px solid rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.801);
         border-radius: 6px;
-        align-self: flex-end;
+        align-self: center;
         margin-right: 1rem;
         margin-top: 2rem;
         font-size: 1.2rem;
         color: rgba(0, 0, 0, 0.73);
+        font-weight: bold;
+        letter-spacing: 2px;
         transition: .3s all ease;
         &:hover {
             cursor: pointer;
