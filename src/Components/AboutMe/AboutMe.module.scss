@@ -1,0 +1,28 @@
+.aboutMe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgba(26,26,26,.7);
+
+    &__section {
+        width: 70rem;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5rem;
+        height: 30rem;
+        p {
+        
+            width: 30rem;
+            font-size: 1rem;
+            height: 100%;
+            line-height: 1.8rem;
+            text-align: left;
+        }
+
+        img {
+             display: inline-block;
+             height: 100%;
+        }
+    }
+}
