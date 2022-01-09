@@ -1,9 +1,16 @@
+@import '../../sassStyles/variable';
+
 .aboutMe {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: rgba(26,26,26,.7);
+    color: $font-color-primary;
+
+    &__heading {
+        font-size: 3rem;
+        padding-top: 2rem;
+    }
 
     &__section {
         width: 70rem;

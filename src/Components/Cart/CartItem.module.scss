@@ -1,3 +1,5 @@
+@import '../../sassStyles/variable';
+
 .cartItem {
   height: 10rem;
   width: 50rem;
@@ -7,7 +9,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem 5rem;
-  color: #979797;
+  color: $font-color-primary;
+
 
   &__Image {
     height: auto;

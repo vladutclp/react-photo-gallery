@@ -4,7 +4,7 @@ import classes from './AboutMe.module.scss';
 const AboutMe = () => {
   return (
     <div className={classes.aboutMe}>
-      <h1>A bit about me</h1>
+      <h1 className={classes.aboutMe__heading}>A bit about me</h1>
       <section className={classes.aboutMe__section}>
         <img src={photo1} alt='photo of myself' />
         <p>
