@@ -1,11 +1,12 @@
-$dark-green: #164A41;
-$medium-green: #4D774E;
-$light-green: #9DC88D;
-$natural-yellow: #F1B24A;
-$color-gray-dark: #777;
 $color-white: #fff;
 $color-black: #000;
 
-$font-color-primary: rgba(26,26,26,.7);
-$font-color-primary-darker: rgba(26,26,26,.8);
+$font-color-primary: rgba(26, 26, 26, .8);
+$font-color-primary-darker: rgba(26, 26, 26, .9);
+$font-color-primary-lighter: rgba(26, 26, 26, .7);
 
+$primary-action-color: rgb(255, 94, 0);
+$primary-action-color-lighter: rgb(255, 148, 47);
+
+$secondary-action-color: rgb(253, 108, 92);
+$secondary-action-color-lighter: salmon;

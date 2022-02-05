@@ -1,7 +1,9 @@
+@import '../../sassStyles/variable';
+
 .contact {
     display: flex;
     flex-direction: column;
-    color: rgba(26,26,26,.7);
+    color: $font-color-primary;
     margin-bottom: 2rem;
     &__infoWrapper {
         height: 10rem;
@@ -33,15 +35,14 @@
         input,
         textarea {
             margin-top: .5rem;
-            background-color: rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(0, 0, 0, 0.2);
+            border: 1px solid $font-color-primary-lighter;
             border-radius: 5px;
             outline: none;
             color: rgba(0, 0, 0, 0.73);
             padding: .5rem .8rem;
             &:focus {
                 background-color: white;
-                border: 1px solid rgba(0, 0, 0, 0.5);
+                border: 1px solid $font-color-primary-darker;
             }
         }
         input {
@@ -55,21 +56,21 @@
     &__submit {
         height: 2.5rem;
         width: 10rem;
-        background-color: white;
-        border: 1px solid rgba(0, 0, 0, 0.801);
+        background-color: $color-white;
+        border: 1px solid rgba($color-black, 0.8);
         border-radius: 6px;
         align-self: center;
         margin-right: 1rem;
         margin-top: 2rem;
         font-size: 1.2rem;
-        color: rgba(0, 0, 0, 0.73);
+        color: $font-color-primary-darker;
         font-weight: bold;
         letter-spacing: 2px;
         transition: .3s all ease;
         &:hover {
             cursor: pointer;
-            color: white;
-            background-color: black;
+            color: $color-white;
+            background-color: $color-black;
         }
     }
 }

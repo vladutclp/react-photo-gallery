@@ -5,7 +5,7 @@
     height: 3rem;
     display: flex;
     justify-content: flex-end;
-    background-color: black;
+    background-color: $color-black;
     letter-spacing: 2px;
     position: relative;
     &__link {
@@ -13,24 +13,24 @@
         padding: .8rem .6rem;
         margin: 0 1rem;
         display: inline-block;
-        color: white;
+        color: $color-white;
         transition: .3s background-color ease;
         &:hover {
-            background-color: white;
-            color: black;
+            background-color: $color-white;
+            color: $color-black;
         }
     }
 
     &__logoImage {
         height: 3rem;
         width: 3rem;
-        color: white;
-        background-color: white;
+        color: $color-white;
+        background-color: $color-white;
         display: block;
     }
 
     &__logoLabel{ 
-        color: white;
+        color: $color-white;
         margin-left: 1rem;
     }
 

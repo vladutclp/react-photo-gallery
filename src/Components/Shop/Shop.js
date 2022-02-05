@@ -7,9 +7,8 @@ import { NavLink } from 'react-router-dom';
 const Shop = ({ products }) => {
   const imageElements = products.map((image) => {
     return (
-      <NavLink to='shop-item' key={image.url}>
+      <NavLink to='shop-item' key={image.url} state={{ imageData: image }}>
         <ImageCard
-          buttonAction={() => console.log('button action')}
           image={image}
         />
       </NavLink>
