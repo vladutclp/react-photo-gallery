@@ -1,26 +1,30 @@
 .button {
-  outline: none;
-  border: none;
-  height: 3rem;
-  background-color: black;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  color: white;
-  font-family: 'Didact Gothic', sans-serif;
-  position: absolute;
-  display: flex;
-  width: 10rem;
-  align-items: center;
-  justify-content: center;
+    outline: none;
+    border: none;
+    height: 3rem;
+    background-color: black;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Didact Gothic', sans-serif;
+    position: absolute;
+    display: flex;
+    width: 10rem;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease all;
+    &__label {
+        margin-left: 0.5rem;
+    }
+    &:hover {
+        cursor: pointer;
+        // transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 
-  &__label {
-    margin-left: 0.5rem;
-  }
-  &:hover {
-    cursor: pointer;
-  }
+    }
+    &:active {
+        // background-color: gray;
+        transform: translateY(.3rem);
 
-  &:active {
-    background-color: gray;
-  }
+    }
 }

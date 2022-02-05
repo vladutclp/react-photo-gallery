@@ -21,7 +21,7 @@ const HeroCard = ({ heading, description, buttonCaption, route }) => (
 const Home = () => {
   return (
     <div className={classes.wrapper}>
-      <Parallax strength={300} blur={3} bgImage={backgroundImage4}>
+      <Parallax strength={300} bgImage={backgroundImage4}>
         <div
           className={`${classes.parallaxContainer__hero} ${classes.parallaxContainer}`}
         >
@@ -42,7 +42,7 @@ const Home = () => {
         future; there is only a deep silence, only a glance!”
       </div>
 
-      <Parallax strength={300} blur={3} bgImage={backgroundImage}>
+      <Parallax strength={300} bgImage={backgroundImage}>
         <div
           className={`${classes.parallaxContainer__hero} ${classes.parallaxContainer}`}
         >
@@ -62,7 +62,7 @@ const Home = () => {
         reverence for what nature is because we are connected to it... If we
         destroy nature, we destroy ourselves.” - Edward Burtynsky
       </div>
-      <Parallax strength={500} bgImage={backgroundImage5} blur={10}>
+      <Parallax strength={500} bgImage={backgroundImage5} >
         <div
           className={`${classes.parallaxContainer__contact} ${classes.parallaxContainer}`}
         >

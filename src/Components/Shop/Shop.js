@@ -2,15 +2,17 @@ import { IMAGES_DATA } from '../../constants';
 import ImageCard from '../Shared/ImageCard';
 import classes from './Shop.module.scss';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const Shop = ({ products }) => {
   const imageElements = products.map((image) => {
     return (
-      <ImageCard
-        buttonAction={() => console.log('button action')}
-        key={image.url}
-        image={image}
-      />
+      <NavLink to='shop-item' key={image.url}>
+        <ImageCard
+          buttonAction={() => console.log('button action')}
+          image={image}
+        />
+      </NavLink>
     );
   });
 
