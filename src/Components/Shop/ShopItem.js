@@ -1,25 +1,33 @@
 import { NavLink } from 'react-router-dom';
 import classes from './ShopItem.module.scss';
-import image from '../../assets/bgImage3.jpg';
 import Button from '../UI/Button/Button';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import apertureIcon from '../../assets/aperture1.png';
-import shutterSpeedIcon from '../../assets/shutter.png';
-import isoIcon from '../../assets/iso1.png';
-import focalIcon from '../../assets/focal.png';
-import cameraIcon from '../../assets/camera1.png';
+
 import { useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart } from '../../store/Shopping/shopping-actions';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import TechnicalInformation from './TechnicalInformation';
 
 const ShopItem = ({ addToCart }) => {
   const location = useLocation();
   console.log('location');
   console.log(location);
   const { imageData } = location.state;
-
+  const notify = () =>
+    toast.success('Print added to cart!', {
+      position: 'top-center',
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <div className={classes.content}>
+      <ToastContainer />
       <NavLink to='/shop'>
         <button className={classes.button}>&larr; Back to prints</button>
       </NavLink>
@@ -69,7 +77,10 @@ const ShopItem = ({ addToCart }) => {
 
           <div className={classes.cartButton}>
             <Button
-              clickHandler={() => addToCart(imageData.id)}
+              clickHandler={() => {
+                addToCart(imageData.id);
+                notify();
+              }}
               label={'Add to cart'}
               icon={faShoppingCart}
             >
@@ -78,53 +89,13 @@ const ShopItem = ({ addToCart }) => {
           </div>
         </div>
       </div>
-      <div className={classes.technicalInfo}>
-        <h2 className={classes.technicalInfo__title}>Technical info</h2>
-
-        <div className={classes.cameraSettings}>
-          <div className={classes.cameraSettings__group}>
-            <img
-              className={classes.cameraSettings__icon}
-              src={cameraIcon}
-              alt=''
-            />
-            <span className={classes.cameraSettings__value}>Nikon d3300</span>
-          </div>
-          <div className={classes.cameraSettings__group}>
-            <img
-              className={classes.cameraSettings__icon}
-              src={apertureIcon}
-              alt=''
-            />
-            <span className={classes.cameraSettings__value}>F5.6</span>
-          </div>
-          <div className={classes.cameraSettings__group}>
-            <img
-              className={classes.cameraSettings__icon}
-              src={shutterSpeedIcon}
-              alt=''
-            />
-            <span className={classes.cameraSettings__value}>1/10s</span>
-          </div>
-          <div className={classes.cameraSettings__group}>
-            <img
-              className={classes.cameraSettings__icon}
-              src={isoIcon}
-              alt=''
-            />
-            <span className={classes.cameraSettings__value}>100</span>
-          </div>
-          <div className={classes.cameraSettings__group}>
-            <img
-              className={classes.cameraSettings__icon}
-              src={focalIcon}
-              alt=''
-            />
-            <span className={classes.cameraSettings__value}>100</span>
-          </div>
-          <div>Focus stacked</div>
-        </div>
-      </div>
+      <TechnicalInformation
+        camera={'Nikon D3300'}
+        aperture={'F11'}
+        iso={100}
+        shutterSpeed={'1/15s'}
+        focalLength={124}
+      />
     </div>
   );
 };
