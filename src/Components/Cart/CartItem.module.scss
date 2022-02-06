@@ -4,7 +4,7 @@
   height: 10rem;
   width: 50rem;
   //   border: 2px solid red;
-  border-bottom: 1px solid #979797;
+  border-bottom: 1px solid $font-color-primary-lighter;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +34,7 @@
     height: 1.5rem;
     text-align: center;
     outline: none;
-    border: 1px solid #eee;
+    border: 1px solid $font-color-primary-lighter;
 
     &:focus {
       border: 2px solid #000;
@@ -46,10 +46,10 @@
       border: none;
       margin-left: .5rem;
       outline: none;
-      color: rgb(173, 173, 173);
+      color: $font-color-primary-lighter;
       transition: .3s color ease;
       &:hover {
-          color: rgb(90, 90, 90);
+          color: $font-color-primary-darker;
           cursor: pointer;
       }
   }

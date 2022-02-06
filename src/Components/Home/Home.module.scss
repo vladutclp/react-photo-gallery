@@ -1,10 +1,11 @@
+@import '../../sassStyles/variable';
 .wrapper {
-    background-color: black;
+    background-color: $color-black;
 }
 
 .quote {
     height: 30vh;
-    color: white;
+    color: $color-white;
     font-style: italic;
     font-size: 2rem;
     padding: 5rem 15rem;
@@ -14,17 +15,11 @@
     text-align: center;
 }
 
-.customBg {
-    height: 50vh;
-    border: 5px solid red;
-}
-
 .hero {
-    // background-color: rgba(255, 255, 255, 0.144);
     border-radius: 10px;
     padding: 10rem 7rem;
     width: 50rem;
-    color: white;
+    color: $color-white;
     display: flex;
     align-items: center;
     text-align: center;
@@ -54,8 +49,8 @@
         outline: none;
         border: none;
         letter-spacing: 2px;
-        background-color: rgb(255, 94, 0);
-        color: white;
+        background-color: $primary-action-color;
+        color: $color-white;
         border-radius: 5px;
         font-size: 1.2rem;
         text-transform: uppercase;
@@ -63,7 +58,7 @@
         text-decoration: none;
         &:hover {
             cursor: pointer;
-            background-color: rgb(255, 148, 47);
+            background-color: $primary-action-color-lighter;
         }
     }
 }
@@ -84,7 +79,7 @@
     &__heading {
         font-size: 2.5rem;
         letter-spacing: 1px;
-        color: white;
+        color: $color-white;
         margin-bottom: 1.5rem;
         font-weight: bold;
     }
@@ -101,13 +96,13 @@
         height: 2.5rem;
         border: none;
         outline: none;
-        color: white;
-        background-color: rgb(253, 108, 92);
+        color: $color-white;
+        background-color: $secondary-action-color;
         padding: .5rem 2rem;
         border-radius: 5px;
         &:hover {
             cursor: pointer;
-            background-color: salmon;
+            background-color: $secondary-action-color-lighter;
         }
     }
 }
