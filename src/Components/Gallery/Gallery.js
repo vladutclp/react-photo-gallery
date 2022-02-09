@@ -1,29 +1,25 @@
-import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import ImageCarousel from '../UI/ImageCarousel/ImageCarousel';
-import Modal from '../UI/Modal/Modal';
-import clalsses from './Gallery.module.scss';
+import classes from './Gallery.module.scss';
 
 const Gallery = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(null);
+  const [showCarousel, setshowCarousel] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
-  const handleImageClick = (photoData) => {
-    console.log('clicked ', photoData);
-    setIsOpen(true);
-    setCurrentImage(photoData);
+  const handleImageClick = (photoIndex) => {
+    setshowCarousel(true);
+    setCurrentImageIndex(photoIndex);
   };
   const getPhotoElements = (photoData, photoSize) => {
-    console.log('from getPhotoElements');
-    console.log(photoData);
     if (photoData) {
-      return photoData.map((photo) => {
+      return photoData.map((photo, index) => {
         return (
           <img
-            onClick={() => handleImageClick(photo)}
+            className={classes.gallery__image}
+            onClick={() => handleImageClick(index)}
             key={photo.id}
             src={photo.smallSize}
-            alt=""
+            alt=''
           />
         );
       });
@@ -34,8 +30,6 @@ const Gallery = () => {
   const getRegularSizeImages = (imageData) => {
     if (!imageData) return null;
     const regularSizeImages = imageData.map((image) => image.regularSize);
-    console.log(regularSizeImages);
-
     return regularSizeImages;
   };
 
@@ -58,8 +52,6 @@ const Gallery = () => {
           thumbSize: photo.urls.thumb,
         };
       });
-      console.log('transformedData');
-      console.log(transformedData);
       if (transformedData) {
         setPhotoData(transformedData);
       }
@@ -72,13 +64,10 @@ const Gallery = () => {
 
   return (
     <div
-      className={clalsses.gallery}
-      style={{ zIndex: 10, position: 'relative' }}
+      className={classes.gallery}
     >
       <section>{getPhotoElements(photoData)}</section>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ImageCarousel images={images} />
-      </Modal>
+      {showCarousel ? <ImageCarousel currentImageIndex={currentImageIndex} action={() => setshowCarousel(false)} images={images} /> : null}
     </div>
   );
 };
