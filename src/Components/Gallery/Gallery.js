@@ -67,7 +67,7 @@ const Gallery = () => {
       className={classes.gallery}
     >
       <section>{getPhotoElements(photoData)}</section>
-      {showCarousel ? <ImageCarousel currentImageIndex={currentImageIndex} action={() => setshowCarousel(false)} images={images} /> : null}
+      {showCarousel ? <ImageCarousel currentImageIndex={currentImageIndex} hideCarousel={() => setshowCarousel(false)} images={images} /> : null}
     </div>
   );
 };
