@@ -1,4 +1,3 @@
-import { IMAGES_DATA } from '../../constants';
 import ImageCard from '../Shared/ImageCard';
 import classes from './Shop.module.scss';
 import { connect } from 'react-redux';
