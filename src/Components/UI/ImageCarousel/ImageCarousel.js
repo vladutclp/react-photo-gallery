@@ -3,7 +3,7 @@ import classes from './ImageCarousel.module.scss';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ImageCarousel = ({ action, currentImageIndex, images }) => {
+const ImageCarousel = ({ currentImageIndex, images, hideCarousel }) => {
   window.onkeydown = (e) => {
     console.log(e);
     if (e.keyCode === 37) {
@@ -11,6 +11,9 @@ const ImageCarousel = ({ action, currentImageIndex, images }) => {
     }
     if (e.keyCode === 39) {
       rightButtonHandler(e);
+    }
+    if(e.keyCode === 27){
+      hideCarousel();
     }
   };
 
@@ -36,7 +39,7 @@ const ImageCarousel = ({ action, currentImageIndex, images }) => {
   return (
     <div
       className={classes.imageCarousel}
-      onClick={action}
+      onClick={hideCarousel}
     >
       <button
         className={`${classes.imageCarousel__button} ${classes.imageCarousel__buttonLeft}`}
