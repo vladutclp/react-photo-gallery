@@ -33,6 +33,12 @@ const initialState = {
       label: 'Landscape photo of a mountain',
       price: 120,
     },
+    {
+      id: 'https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      url: 'https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      label: 'Landscape photo of a mountain',
+      price: 120,
+    },
   ],
   cart: [], //{id, url, descr, price, qty}
   currentItem: null,

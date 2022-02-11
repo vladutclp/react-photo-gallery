@@ -1,36 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
-.ImageCard {
-    // border: 2px solid red;
-  min-width: 30rem;
-  min-height: 30rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 1rem;
-  position: relative;
-  &__ImageHover {
-    transition: 0.4s all ease;
-
-    opacity: 0.3;
-  }
-  &__Metadata {
-    position: absolute;
-    bottom: 0;
+@import '../../sassStyles/_variable.scss';
+.imageCard {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    line-height: 2rem;
-  }
+    margin: 1rem;
+    &__image {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__label {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: $font-color-primary-lighter;
+        padding: 1.5rem;
+    }
+}
 
-  &__Label {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-  }
-
-  &__Label,
-  &__Price {
-    font-family: 'Didact Gothic', sans-serif;
-  }
+.imageWrapper {
+    width: 30rem;
+    height: 30rem;
 }
