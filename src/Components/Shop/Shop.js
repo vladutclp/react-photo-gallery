@@ -7,18 +7,12 @@ const Shop = ({ products }) => {
   const imageElements = products.map((image) => {
     return (
       <NavLink to='shop-item' key={image.url} state={{ imageData: image }}>
-        <ImageCard
-          image={image}
-        />
+        <ImageCard image={image} />
       </NavLink>
     );
   });
 
-  return (
-    <div className={classes.shop}>
-      <section>{imageElements}</section>
-    </div>
-  );
+  return <section className={classes.shop}>{imageElements}</section>;
 };
 
 const mapStateToProps = (state) => {
