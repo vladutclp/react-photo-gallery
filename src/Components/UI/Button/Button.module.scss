@@ -9,7 +9,6 @@
     text-transform: uppercase;
     color: $color-white;
     font-family: 'Didact Gothic', sans-serif;
-    position: absolute;
     display: flex;
     width: 10rem;
     align-items: center;
@@ -20,7 +19,7 @@
     }
     &:hover {
         cursor: pointer;
-        box-shadow: 0 1rem 2rem $font-color-primary-lighter;
+        box-shadow: 0 10px 20px rgba($color:  $font-color-primary-lighter, $alpha: .2);
 
     }
     &:active {
