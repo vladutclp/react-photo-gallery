@@ -2,33 +2,65 @@ import Button from '../UI/Button/Button';
 import classes from './Contact.module.scss';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {useNavigate} from 'react-router-dom';
+import { useState } from 'react';
 
 const Contact = () => {
-
-  let navigate = useNavigate();
-  const redirectToHome = () => {
-    let path = '/'
-    navigate(path)
-  }
-
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('message was sent')
     notify();
-    redirectToHome();
-  }
+  };
 
   const notify = () =>
-  toast.success('Message sent!', {
-    position: 'top-center',
-    autoClose: 500,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
+    toast.success('Message sent!', {
+      position: 'top-center',
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const [email, setEmail] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [message, setMessage] = useState('');
+  const [subject, setSubject] = useState('');
+  const [name, setName] = useState('');
+  
+  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [lastNameIsValid, setLastNameIsValid] = useState(false)
+  const [messageIsValid, setMessageIsValid] = useState(false);
+  const [subjectIsValid, setSubjectIsValid] = useState(false);
+  const [nameIsValid, setNameIsValid] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  const [formErrors, setFormErrors] = useState({
+    email: '',
+    lastName: '',
+    message: '',
+    subject: '',
+    name: '',
   });
+
+  const nameChangeHandler = (e) => {
+    setName(e.target.value);
+  }
+
+  const lastNameChangeHandler = (e) => {
+    setLastName(e.target.value);
+  }
+
+  const emailChangeHandler = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const subjectChangeHandler = (e) => {
+    setSubject(e.target.value);
+  }
+  
+  const messageChangeHandler = (e) => {
+    setMessage(e.target.value);
+  }
 
   return (
     <div className={classes.contact}>
@@ -46,6 +78,8 @@ const Contact = () => {
           <div className={classes.form__group}>
             <input
               className={classes.form__input}
+              onChange={nameChangeHandler}
+              value={name}
               type='text'
               name='name'
               placeholder='Name'
@@ -58,6 +92,8 @@ const Contact = () => {
           <div className={classes.form__group}>
             <input
               className={classes.form__input}
+              onChange={lastNameChangeHandler}
+              value={lastName}
               type='text'
               name='lastName'
               placeholder='Last name'
@@ -71,6 +107,8 @@ const Contact = () => {
         <div className={classes.form__group}>
           <input
             className={classes.form__input}
+            onChange={emailChangeHandler}
+            value={email}
             type='email'
             name='email'
             placeholder='Email'
@@ -83,6 +121,8 @@ const Contact = () => {
         <div className={classes.form__group}>
           <input
             className={classes.form__input}
+            onChange={subjectChangeHandler}
+            value={subject}
             type='text'
             name='subject'
             placeholder='Subject'
@@ -96,8 +136,9 @@ const Contact = () => {
         <div className={classes.form__group}>
           <textarea
             className={classes.form__input}
+            onChange={messageChangeHandler}
+            value={message}
             name='Message'
-            cols='30'
             rows='3'
             placeholder='Message'
             required
@@ -107,7 +148,11 @@ const Contact = () => {
           </label>
         </div>
 
-        <Button clickHandler={submitHandler} className={classes.form__submit} label={'Send message'}>
+        <Button
+          clickHandler={submitHandler}
+          className={classes.form__submit}
+          label={'Send message'}
+        >
           Submit
         </Button>
       </form>

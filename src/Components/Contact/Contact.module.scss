@@ -38,16 +38,18 @@
     &__input {
         color: $font-color-primary-darker;
         padding: 1rem 2rem;
-        border: 2px solid rgba($color: $font-color-primary, $alpha: .2);
+        border: 3px solid rgba($color: $font-color-primary, $alpha: .1);
         font-size: 1rem;
         font-family: inherit;
         letter-spacing: 1px;
+        transition: .2s ease all;
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
-            border-bottom: 2px solid #55c57a;
+            border: 3px solid #55c57a;
+            
             &:invalid {
-                border-bottom: 2px solid #ff7730;
+                border: 3px solid #ff7730;
             }
         }
         &::-webkit-input-placeholder {

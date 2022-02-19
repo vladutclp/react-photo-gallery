@@ -20,6 +20,7 @@
     &:hover {
         cursor: pointer;
         box-shadow: 0 10px 20px rgba($color:  $font-color-primary-lighter, $alpha: .2);
+        opacity: .85;
 
     }
     &:active {
