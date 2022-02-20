@@ -35,3 +35,17 @@ export const IMAGES_DATA = [
     price: '120$',
   },
 ];
+
+export const FIELD_NAMES = {
+  EMAIL: 'email',
+  LASTNAME: 'lastName',
+  MESSAGE: 'message',
+  NAME: 'name',
+  SUBJECT: 'subject',
+}
+
+export const FIELD_TYPES = {
+  EMAIL: 'email',
+  TEXT: 'text',
+  TEXTAREA: 'textarea'
+}
