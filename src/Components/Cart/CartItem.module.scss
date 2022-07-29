@@ -1,32 +1,41 @@
 @import '../../sassStyles/variable';
+@import '../../sassStyles/_mixins.scss';
 
 .cartItem {
-  height: 10rem;
-  width: 50rem;
+  // height: 10rem;
+  // width: 50rem;
+  width: 80%;
   //   border: 2px solid red;
   border-bottom: 1px solid $font-color-primary-lighter;
+  // border: 3px solid red;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem 5rem;
   color: $font-color-primary;
+  box-sizing: border-box;
 
 
   &__Image {
+    // border: 3px solid red;
     height: auto;
-    width: 12rem;
+    width: 10rem;
     margin-right: 1rem;
   }
 
-  &__ImageWrapper {
-    // border: 2px solid red;
+
+  &__actions {
+    // border: 5px solid green;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
-  &__Label {
-    font-size: 1.2rem;
+  &__qtyActions {
+    align-self: center;
+    margin: auto;
+    // border: 5px solid red;
   }
 
   &__QtyInput {
@@ -34,23 +43,66 @@
     height: 1.5rem;
     text-align: center;
     outline: none;
-    border: 1px solid $font-color-primary-lighter;
+    border: 1px solid transparent;
 
     &:focus {
-      border: 2px solid #000;
+      border: 1px solid #b5b5b5;
     }
   }
 
-  &__DeleteButton {
-      background-color: transparent;
-      border: none;
-      margin-left: .5rem;
+  &__details {
+    // border: 5px solid blue;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
       outline: none;
-      color: $font-color-primary-lighter;
-      transition: .3s color ease;
+      border: none;
+      background-color: transparent;
+      color: rgb(113, 113, 113);
+
       &:hover {
-          color: $font-color-primary-darker;
-          cursor: pointer;
+        cursor: pointer;
       }
+    }
+  }
+
+  &__Price {
+
+  }
+
+  &__DeleteButton {
+
+    background-color: transparent;
+    border: none;
+    margin-left: .5rem;
+    outline: none;
+    color: $font-color-primary-lighter;
+    transition: .3s color ease;
+    // border: 3px solid red;
+
+    &:hover {
+      color: $font-color-primary-darker;
+      cursor: pointer;
+    }
+  }
+
+  @include respond(phone) {
+    padding: 2rem 0;
+
+    &__QtyInput {
+      width: 1.3rem;
+      height: 1.3rem;
+      font-size: 1.4rem;
+    }
+
+    &__Price {
+      font-size: 1.5rem;
+    }
+
   }
 }

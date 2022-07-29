@@ -34,3 +34,22 @@ export const loadCurrentItem = (item) => {
     payload: item,
   };
 };
+
+
+export const increment = (itemId) => {
+  return {
+    type: actionTypes.INCREMENT,
+    payload: {
+      id: itemId
+    }
+  };
+};
+
+export const decrement = (itemId) => {
+  return {
+    type: actionTypes.DECREMENT,
+    payload: {
+      id: itemId
+    }
+  };
+};

@@ -1,12 +1,28 @@
+@import '../../sassStyles/_mixins.scss';
+
 .shop {
-    padding: 5rem 20rem;
+    padding: 3rem 5rem;
+    margin: 0 auto;
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-evenly;
+    justify-items: center;
+
     a {
         text-decoration: none;
+    }
+
+    @include respond(big-desktop) {
+        padding: 5rem 20rem;
+    }
+
+    @include respond(tablet-portrait) {
+        grid-template-columns: none;
+    }
+
+    @include respond(phone) {
+        grid-template-columns: none;
     }
 }

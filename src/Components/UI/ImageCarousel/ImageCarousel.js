@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import classes from './ImageCarousel.module.scss';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ImageCarousel = ({ currentImageIndex, images, hideCarousel }) => {
@@ -12,7 +12,7 @@ const ImageCarousel = ({ currentImageIndex, images, hideCarousel }) => {
     if (e.keyCode === 39) {
       rightButtonHandler(e);
     }
-    if(e.keyCode === 27){
+    if (e.keyCode === 27) {
       hideCarousel();
     }
   };
@@ -39,13 +39,18 @@ const ImageCarousel = ({ currentImageIndex, images, hideCarousel }) => {
   return (
     <div
       className={classes.imageCarousel}
-      onClick={hideCarousel}
+    // onClick={hideCarousel}
     >
+      <button
+        onClick={hideCarousel}
+        className={`${classes.imageCarousel__button} ${classes.imageCarousel__closeButton}`}>
+        <FontAwesomeIcon className={classes.imageCarousel__icon} icon={faTimes} />
+      </button>
       <button
         className={`${classes.imageCarousel__button} ${classes.imageCarousel__buttonLeft}`}
         onClick={leftButtonHandler}
       >
-        <FontAwesomeIcon icon={faArrowLeft} size='3x' color='white' />
+        <FontAwesomeIcon className={classes.imageCarousel__icon} icon={faChevronLeft} />
       </button>
       <img
         className={classes.imageCarousel__image}
@@ -57,7 +62,7 @@ const ImageCarousel = ({ currentImageIndex, images, hideCarousel }) => {
         className={`${classes.imageCarousel__button} ${classes.imageCarousel__buttonRight}`}
         onClick={rightButtonHandler}
       >
-        <FontAwesomeIcon icon={faArrowRight} size='3x' color='white' />
+        <FontAwesomeIcon className={classes.imageCarousel__icon} icon={faChevronRight} />
       </button>
     </div>
   );
