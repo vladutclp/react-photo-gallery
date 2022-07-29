@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styles from './Cart.module.scss';
 import CartItem from './CartItem';
+
 const Cart = ({ cartItems }) => {
-  console.log(cartItems);
+
   const getTotalCartPrice = (cartItems) => {
     let totalPrice = 0;
     cartItems.forEach(
@@ -11,6 +12,7 @@ const Cart = ({ cartItems }) => {
     );
     return totalPrice;
   };
+
   const getDisplayContent = (cartItems) => {
     if (cartItems.length === 0) {
       return (
@@ -24,9 +26,9 @@ const Cart = ({ cartItems }) => {
       <CartItem key={cartItem.id} cartItem={cartItem} />
     ));
   };
+
   return (
     <div className={styles.cart}>
-      <div className={styles.cartWrapper}>
         <h1 className={styles.cart__heading}>Shopping cart</h1>
         {getDisplayContent(cartItems)}
         {cartItems.length > 0 && (
@@ -37,7 +39,6 @@ const Cart = ({ cartItems }) => {
             </span>
           </h2>
         )}
-      </div>
     </div>
   );
 };

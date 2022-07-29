@@ -3,15 +3,15 @@
 @import url('https://use.typekit.net/hss6utk.css');
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400&display=swap');
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ margin: 0;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
 
 /* 
 * Global CSS reset Ericc Meyer solution
@@ -20,6 +20,7 @@ code {
 *
 *
 */
+
 html,
 body,
 div,
@@ -101,18 +102,22 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  /* font-family: 'Lato', sans-serif; */
-  /* font-family: 'Lato', sans-serif; */
-  font-family: 'Montserrat', sans-serif;
-  /* font-family: 'Didact Gothic', sans-serif; */
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 62.5%;
+ /* 1rem=10px */
+ font: inherit;
+ vertical-align: baseline;
+ /* font-family: 'Lato', sans-serif; */
+ /* font-family: 'Lato', sans-serif; */
+ font-family: 'Montserrat', sans-serif;
+ /* font-family: 'Didact Gothic', sans-serif; */
 }
+
+
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -124,38 +129,71 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+ display: block;
 }
+
 body {
-  line-height: 1;
+ line-height: 1;
 }
+
 ol,
 ul {
-  list-style: none;
+ list-style: none;
 }
+
 blockquote,
 q {
-  quotes: none;
+ quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
-  content: none;
+ content: '';
+ content: none;
 }
+
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+ border-collapse: collapse;
+ border-spacing: 0;
 }
 
 html,
 body {
-  height: 100%;
-  min-height: 100%;
-  margin: 0;
+ height: 100%;
+ min-height: 100%;
+ margin: 0;
 }
 
 html #root {
-  height: 100%;
+ height: 100%;
+}
+
+@media screen and (max-width: 112.5em) {
+ html,
+ body {
+  font-size: 100%;
+ }
+}
+
+@media screen and (max-width: 75em) {
+ html,
+ body {
+  font-size: 80%;
+ }
+}
+
+@media screen and (max-width: 56.25em) {
+ html,
+ body {
+  font-size: 70%;
+ }
+}
+
+@media screen and (max-width: 37.5rem) {
+ html,
+ body {
+  font-size: 50%;
+ }
 }

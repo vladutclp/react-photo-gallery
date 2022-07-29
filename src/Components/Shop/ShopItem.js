@@ -1,20 +1,19 @@
-import { NavLink } from 'react-router-dom';
 import classes from './ShopItem.module.scss';
 import Button from '../UI/Button/Button';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addToCart } from '../../store/Shopping/shopping-actions';
+import { addToCart, adjustQty } from '../../store/Shopping/shopping-actions';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import TechnicalInformation from './TechnicalInformation';
 
-const ShopItem = ({ addToCart }) => {
+const ShopItem = ({ addToCart, adjustQty, cartItems }) => {
   const location = useLocation();
-  console.log('location');
-  console.log(location);
+
   const { imageData } = location.state;
+
+
   const notify = () =>
     toast.success('Print added to cart!', {
       position: 'top-center',
@@ -61,7 +60,7 @@ const ShopItem = ({ addToCart }) => {
             </select>
           </div>
 
-          <div className={classes.quantity}>
+          {/* <div className={classes.quantity}>
             <label className={classes.quantity__label} htmlFor='quantity'>
               Quantity:
             </label>
@@ -69,33 +68,30 @@ const ShopItem = ({ addToCart }) => {
               className={classes.quantity__input}
               type='number'
               name='quantity'
+              onChange={(e) => {
+                console.log('from onChangeHandler');
+                console.log(e.target.value);
+                setInputValue(e.target.value);
+              }}
+              value={inputValue}
               min='1'
               max='50'
-              defaultValue={'1'}
             />
-          </div>
+          </div> */}
 
-          <div className={classes.cartButton}>
-            <Button
-              clickHandler={() => {
-                addToCart(imageData.id);
-                notify();
-              }}
-              label={'Add to cart'}
-              icon={faShoppingCart}
-            >
-              Add to cart
-            </Button>
-          </div>
+          <Button
+            clickHandler={() => {
+              addToCart(imageData.id);
+              notify();
+            }}
+            label={'Add to cart'}
+            icon={faShoppingCart}
+            className={classes.cartButton}
+          >
+            Add to cart
+          </Button>
         </div>
       </div>
-      <TechnicalInformation
-        camera={'Nikon D3300'}
-        aperture={'F11'}
-        iso={100}
-        shutterSpeed={'1/15s'}
-        focalLength={124}
-      />
     </div>
   );
 };
@@ -103,7 +99,15 @@ const ShopItem = ({ addToCart }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => dispatch(addToCart(id)),
+    adjustQty: (qty, id) => dispatch(adjustQty(qty, id)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(ShopItem);
+
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state.shop.cart,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShopItem);

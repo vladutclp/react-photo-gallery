@@ -1,7 +1,12 @@
 @import '../../sassStyles/variable';
+@import '../../sassStyles/_mixins.scss';
+
+
 .content {
-    padding: 5rem 10rem;
+    padding: 5rem;
     color: $font-color-primary;
+    min-height: calc(100vh - 20rem);
+
 }
 
 .button {
@@ -15,10 +20,12 @@
     letter-spacing: 150%;
     transition: .2s ease;
     padding: 2rem 3rem;
+
     &:hover {
         transform: translateY(-.1rem);
         cursor: pointer;
     }
+
     &:active {
         transform: translateY(.1rem);
     }
@@ -28,13 +35,17 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    // border: 3px solid red;
     padding: 5rem 0;
 }
 
 .image {
+    flex-shrink: 1;
+    // border: 3px solid blue;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
     img {
         object-fit: contain;
         width: 70%;
@@ -47,7 +58,9 @@
 
 .information {
     justify-self: flex-end;
-    width: 50%;
+    // border: 3px solid blue;
+    width: 70%;
+
     &__title {
         font-family: adobe-garamond-pro, serif;
         font-weight: 400;
@@ -56,9 +69,11 @@
         color: $font-color-primary-darker;
         margin-bottom: 1.1rem;
     }
+
     &__price {
         margin-bottom: 1.1rem;
     }
+
     &__description {
         margin-bottom: 2rem;
         padding-right: 3rem;
@@ -71,9 +86,11 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
+
     &__label {
         margin-bottom: .3rem;
     }
+
     &__select {
         color: $font-color-primary-darker;
         font-size: .8rem;
@@ -85,13 +102,65 @@
     display: flex;
     flex-direction: column;
     width: 5rem;
+
     &__label {
         margin-bottom: .3rem;
     }
+
     &__input {
         padding: .5rem 1rem;
         border: 1px solid $font-color-primary-lighter;
         border-radius: .3rem;
         color: $font-color-primary-darker;
+    }
+}
+
+@include respond(phone) {
+    .details {
+        // border: 3px solid red;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .information {
+        &__title {
+            margin-top: 3rem;
+        }
+    }
+
+    .cartButton {
+        font-size: 1rem;
+        padding: 1rem 3rem;
+        border-radius: 1px;
+    }
+
+    .content {
+        padding: 1rem;
+        color: $font-color-primary;
+    }
+}
+
+@include respond(tablet-portrait) {
+    .details {
+        // border: 3px solid red;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .information {
+        &__title {
+            margin-top: 3rem;
+        }
+    }
+
+    .cartButton {
+        font-size: 1rem;
+        padding: 1rem 3rem;
+        border-radius: 1px;
+    }
+
+    .content {
+        padding: 2rem;
+        color: $font-color-primary;
     }
 }

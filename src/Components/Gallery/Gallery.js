@@ -66,6 +66,7 @@ const Gallery = () => {
     <div
       className={classes.gallery}
     >
+      <h1 className={classes.gallery__header}>Gallery</h1>
       <section>{getPhotoElements(photoData)}</section>
       {showCarousel ? <ImageCarousel currentImageIndex={currentImageIndex} hideCarousel={() => setshowCarousel(false)} images={images} /> : null}
     </div>

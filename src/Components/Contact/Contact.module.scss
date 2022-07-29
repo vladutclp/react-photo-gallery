@@ -1,10 +1,19 @@
 @import '../../sassStyles/_variable.scss';
+@import '../../sassStyles/_mixins.scss';
+
 .contact {
     display: flex;
     flex-direction: column;
     color: $font-color-primary;
     margin-bottom: 2rem;
     align-items: center;
+
+    @include respond(phone) {
+        padding: 5rem;
+        padding-top: 2rem;
+        margin-bottom: 5rem;
+    }
+
 }
 
 .description {
@@ -35,7 +44,7 @@
     &__input {
         color: $font-color-primary-darker;
         padding: 1rem 2rem;
-        border: 3px solid rgba($color: $font-color-primary, $alpha: .1);
+        border: 2px solid rgba($color: $font-color-primary, $alpha: .1);
         font-size: 1rem;
         font-family: inherit;
         letter-spacing: 1px;
@@ -43,7 +52,7 @@
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
-            border: 3px solid rgba($color: $font-color-primary, $alpha: .3);
+            border: 2px solid rgba($color: $font-color-primary, $alpha: .3);
         }
         &::-webkit-input-placeholder {
             color: $font-color-primary-lighter;
@@ -51,7 +60,7 @@
     }
     &__validField {
         input, input:focus, textarea, textarea:focus {
-            border: 3px solid $success-primary;
+            border: 2px solid $success-primary;
         }
         label {
             color: $success-primary;
@@ -59,7 +68,7 @@
     }
     &__invalidField {
         input, input:focus, textarea, textarea:focus {
-            border: 3px solid $danger-primary;
+            border: 2px solid $danger-primary;
         }
         label {
             color: $danger-primary;
@@ -83,12 +92,22 @@
     &__submit {
         letter-spacing: 2px;
         align-self: center;
+        font-size: 1rem;
+        width: 20rem;
+        padding: 2rem 4rem;
+        
     }
     &__nameFields {
         display: flex;
         justify-content: stretch;
         div {
             width: 100%;
+        }
+    }
+
+    @include respond(phone) {
+        &__submit {
+            margin-top: 5rem;
         }
     }
 }

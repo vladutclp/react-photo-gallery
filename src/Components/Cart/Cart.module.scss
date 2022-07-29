@@ -1,4 +1,5 @@
 @import '../../sassStyles/variable';
+@import '../../sassStyles/_mixins.scss';
 
 .cart {
   margin: 0 auto;
@@ -7,13 +8,14 @@
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 5rem 15rem;
+  // padding: 5rem 15rem;
   min-height: calc(100vh - 20rem);
   &__heading {
     font-size: 2rem;
     border-bottom: 1px solid $font-color-primary;
-
-    padding-bottom: 2rem;
+    display: inline-block;
+    width: 80%;
+    padding: 3rem 0;
   }
 
   &__empty {
@@ -21,13 +23,32 @@
   }
 
   &__totalPrice {
+    // border: 3px solid red;
+    width: 80%;
     text-align: end;
-    padding: 1rem 0;
-    font-size: 1.1rem;
+    padding: 1rem 5rem;
+    font-size: 1.4rem;
+    box-sizing: border-box;
   }
 
   &__totalPriceValue {
     font-size: 1.2rem;
     margin-left: 1rem;
+  }
+
+  @include respond(phone) {
+    &__totalPrice {
+      // padding: 1rem 2rem;
+      width: 80%;
+      text-align: end;
+      padding: 1rem 1rem;
+      font-size: 1.7rem;
+      box-sizing: border-box;
+    }
+
+    &__totalPriceValue {
+      font-size: 1.7rem;
+      // margin-left: 1rem;
+    }
   }
 }
